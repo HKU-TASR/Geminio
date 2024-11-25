@@ -1,0 +1,10 @@
+torch==2.1.2
+torchvision==0.16.2
+numpy==1.24.1
+scipy
+tqdm
+pandas
+kornia
+matplotlib
+pyyaml
+hydra-core
