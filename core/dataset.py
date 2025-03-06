@@ -47,7 +47,7 @@ class CustomData:
         for file_name in file_name_list[0:self.data_points]:
             img = Image.open(self.data_dir+file_name).convert("RGB")
             imgs.append(trans(img)[None,:])
-            label = int(file_name.split('-')[0])
+            label = int(os.path.splitext(file_name)[0].split('-')[1])
             # label = 20
             labels_.append(label)
         imgs = torch.cat(imgs, 0)
