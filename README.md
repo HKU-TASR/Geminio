@@ -50,7 +50,7 @@ To demonstrate Geminio, the pre-generated malicious models cover the following q
 - "Any females riding a horse?"
 
 ## Step 2a: Gradient Inversion
-We selected the following 128 images from `./assets/private_samples` as the private samples used in this step:
+We selected the following 128 images from ImageNet as the private samples used in this step:
 
 ![Original 128 Images](./assets/original.jpg)
 
