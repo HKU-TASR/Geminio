@@ -3,7 +3,7 @@
 # Settings are separated into case, attack analysis
 defaults:
   - case: 12_custom_imagenet
-  - attack: invertinggradients
+  - attack: hfgradinv
   - _self_
   - override hydra/job_logging: custom
 

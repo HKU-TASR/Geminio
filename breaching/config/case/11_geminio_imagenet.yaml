@@ -1,0 +1,17 @@
+name: 11_geminio_imagenet
+
+defaults:
+  - data: GeminioImageNet
+  - impl: default
+  - server: honest-but-curious
+  - user: local_gradient
+  - _self_
+model: ResNet34
+no_dropout: True
+
+user:
+  provide_labels: True
+  num_data_points: 128
+
+# Server and user:
+num_queries: 1

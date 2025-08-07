@@ -21,7 +21,7 @@ def get_config(overrides=[]):
     return cfg
 
 
-def get_attack_config(attack="invertinggradients", overrides=[]):
+def get_attack_config(attack="hfgradinv", overrides=[]):
     """Return default hydra config for a given attack."""
     with hydra.initialize(config_path="config/attack", version_base="1.1"):
         cfg = hydra.compose(config_name=attack, overrides=overrides)

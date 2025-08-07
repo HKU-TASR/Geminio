@@ -15,6 +15,8 @@ import hashlib
 import concurrent.futures
 
 import csv
+import sys
+import os
 
 
 def _build_dataset_vision(cfg_data, split, can_download=True):
@@ -56,6 +58,13 @@ def _build_dataset_vision(cfg_data, split, can_download=True):
     elif cfg_data.name == "Birdsnap":
         dataset = Birdsnap(root=cfg_data.path, split=split, download=can_download, transform=_default_t)
         dataset.lookup = dict(zip(list(range(len(dataset))), dataset.labels))
+    elif cfg_data.name == "GeminioImageNet":
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
+        from datasets import GeminioImageNet
+        dataset = GeminioImageNet(
+            root=cfg_data.path, split="val", transform=_default_t,
+        )
+        dataset.lookup = dict(zip(list(range(len(dataset))), [label for (_, label) in dataset.samples]))
     else:
         raise ValueError(f"Invalid dataset {cfg_data.name} provided.")
 
